@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 
 const AppLayout = () => {
@@ -1468,13 +1468,15 @@ function Header() {
 }
 
 const Body = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="body">
       <div className="search"> Search</div>
       <div className="res-container">
-        <RestaurantCard resData={resList[0]} />
-        <RestaurantCard resData={resList[1]} />
-        <RestaurantCard resData={resList[2]} />
+        {resList.map((item, index) => (
+          <RestaurantCard resData={resList[index]} />
+        ))}
       </div>
     </div>
   );
