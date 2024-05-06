@@ -1,3 +1,43 @@
-.root {
-  color: blue;
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  font-size: 18px;
+}
+
+.list {
+  display: flex;
+  padding: 0 30px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.list > li {
+  padding: 0px 14px;
+  list-style-type: none;
+}
+
+.logo {
+  width: 150px;
+}
+
+.res-card {
+  height: 500px;
+  width: 200px;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.res-img {
+  width: 100%;
+}
+
+.res-container {
+  display: flex;
+  gap: 10px;
 }
