@@ -12,127 +12,127 @@ const AppLayout = () => {
 
 const resList = [
   {
-    info: {
-      id: "594820",
-      name: "Chinese Wok",
-      cloudinaryImageId: "e0839ff574213e6f35b3899ebf1fc597",
-      locality: "Sector 34",
-      areaName: "Sector 15",
-      costForTwo: "₹250 for two",
-      cuisines: ["Chinese"],
-      avgRating: 4.1,
-      parentId: "61955",
-      avgRatingString: "4.1",
-      totalRatingsString: "500+",
-      sla: {
-        deliveryTime: 29,
-        lastMileTravel: 2.3,
-        serviceability: "SERVICEABLE",
-        slaString: "25-30 mins",
-        lastMileTravelString: "2.3 km",
-        iconType: "ICON_TYPE_EMPTY",
-      },
-      availability: {
-        nextCloseTime: "2024-05-06 23:00:00",
-        opened: true,
-      },
-      badges: {},
-      isOpen: true,
-      type: "F",
-      badgesV2: {
-        entityBadges: {
-          imageBased: {},
-          textBased: {},
-          textExtendedBadges: {},
-        },
-      },
-      aggregatedDiscountInfoV3: {
-        header: "ITEMS",
-        subHeader: "AT ₹179",
-      },
-      differentiatedUi: {
-        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-        differentiatedUiMediaDetails: {
-          mediaType: "ADS_MEDIA_ENUM_IMAGE",
-          lottie: {},
-          video: {},
-        },
-      },
-      reviewsSummary: {},
-      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-      restaurantOfferPresentationInfo: {},
-    },
-    analytics: {},
-    cta: {
-      link: "https://www.swiggy.com/restaurants/chinese-wok-sector-34-sector-15-gurgaon-594820",
-      type: "WEBLINK",
-    },
-  },
-  {
-    info: {
-      id: "89555",
-      name: "UBQ by Barbeque Nation",
-      cloudinaryImageId: "e3q3szijnit5cfvx6iqu",
-      locality: "Sector 47",
-      areaName: "Sector 47",
-      costForTwo: "₹300 for two",
-      cuisines: [
-        "North Indian",
-        "Barbecue",
-        "Biryani",
-        "Kebabs",
-        "Mughlai",
-        "Desserts",
-      ],
-      avgRating: 3.9,
-      parentId: "10804",
-      avgRatingString: "3.9",
-      totalRatingsString: "1K+",
-      sla: {
-        deliveryTime: 34,
-        lastMileTravel: 5,
-        serviceability: "SERVICEABLE",
-        slaString: "30-35 mins",
-        lastMileTravelString: "5.0 km",
-        iconType: "ICON_TYPE_EMPTY",
-      },
-      availability: {
-        nextCloseTime: "2024-05-06 23:30:00",
-        opened: true,
-      },
-      badges: {},
-      isOpen: true,
-      type: "F",
-      badgesV2: {
-        entityBadges: {
-          imageBased: {},
-          textBased: {},
-          textExtendedBadges: {},
-        },
-      },
-      aggregatedDiscountInfoV3: {
-        header: "50% OFF",
-        subHeader: "UPTO ₹100",
-      },
-      differentiatedUi: {
-        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-        differentiatedUiMediaDetails: {
-          mediaType: "ADS_MEDIA_ENUM_IMAGE",
-          lottie: {},
-          video: {},
-        },
-      },
-      reviewsSummary: {},
-      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-      restaurantOfferPresentationInfo: {},
-    },
-    analytics: {},
-    cta: {
-      link: "https://www.swiggy.com/restaurants/ubq-by-barbeque-nation-sector-47-gurgaon-89555",
-      type: "WEBLINK",
-    },
-  },
-  {
+    //   info: {
+    //     id: "594820",
+    //     name: "Chinese Wok",
+    //     cloudinaryImageId: "e0839ff574213e6f35b3899ebf1fc597",
+    //     locality: "Sector 34",
+    //     areaName: "Sector 15",
+    //     costForTwo: "₹250 for two",
+    //     cuisines: ["Chinese"],
+    //     avgRating: 4.1,
+    //     parentId: "61955",
+    //     avgRatingString: "4.1",
+    //     totalRatingsString: "500+",
+    //     sla: {
+    //       deliveryTime: 29,
+    //       lastMileTravel: 2.3,
+    //       serviceability: "SERVICEABLE",
+    //       slaString: "25-30 mins",
+    //       lastMileTravelString: "2.3 km",
+    //       iconType: "ICON_TYPE_EMPTY",
+    //     },
+    //     availability: {
+    //       nextCloseTime: "2024-05-06 23:00:00",
+    //       opened: true,
+    //     },
+    //     badges: {},
+    //     isOpen: true,
+    //     type: "F",
+    //     badgesV2: {
+    //       entityBadges: {
+    //         imageBased: {},
+    //         textBased: {},
+    //         textExtendedBadges: {},
+    //       },
+    //     },
+    //     aggregatedDiscountInfoV3: {
+    //       header: "ITEMS",
+    //       subHeader: "AT ₹179",
+    //     },
+    //     differentiatedUi: {
+    //       displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    //       differentiatedUiMediaDetails: {
+    //         mediaType: "ADS_MEDIA_ENUM_IMAGE",
+    //         lottie: {},
+    //         video: {},
+    //       },
+    //     },
+    //     reviewsSummary: {},
+    //     displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    //     restaurantOfferPresentationInfo: {},
+    //   },
+    //   analytics: {},
+    //   cta: {
+    //     link: "https://www.swiggy.com/restaurants/chinese-wok-sector-34-sector-15-gurgaon-594820",
+    //     type: "WEBLINK",
+    //   },
+    // },
+    // {
+    //   info: {
+    //     id: "89555",
+    //     name: "UBQ by Barbeque Nation",
+    //     cloudinaryImageId: "e3q3szijnit5cfvx6iqu",
+    //     locality: "Sector 47",
+    //     areaName: "Sector 47",
+    //     costForTwo: "₹300 for two",
+    //     cuisines: [
+    //       "North Indian",
+    //       "Barbecue",
+    //       "Biryani",
+    //       "Kebabs",
+    //       "Mughlai",
+    //       "Desserts",
+    //     ],
+    //     avgRating: 3.9,
+    //     parentId: "10804",
+    //     avgRatingString: "3.9",
+    //     totalRatingsString: "1K+",
+    //     sla: {
+    //       deliveryTime: 34,
+    //       lastMileTravel: 5,
+    //       serviceability: "SERVICEABLE",
+    //       slaString: "30-35 mins",
+    //       lastMileTravelString: "5.0 km",
+    //       iconType: "ICON_TYPE_EMPTY",
+    //     },
+    //     availability: {
+    //       nextCloseTime: "2024-05-06 23:30:00",
+    //       opened: true,
+    //     },
+    //     badges: {},
+    //     isOpen: true,
+    //     type: "F",
+    //     badgesV2: {
+    //       entityBadges: {
+    //         imageBased: {},
+    //         textBased: {},
+    //         textExtendedBadges: {},
+    //       },
+    //     },
+    //     aggregatedDiscountInfoV3: {
+    //       header: "50% OFF",
+    //       subHeader: "UPTO ₹100",
+    //     },
+    //     differentiatedUi: {
+    //       displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+    //       differentiatedUiMediaDetails: {
+    //         mediaType: "ADS_MEDIA_ENUM_IMAGE",
+    //         lottie: {},
+    //         video: {},
+    //       },
+    //     },
+    //     reviewsSummary: {},
+    //     displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+    //     restaurantOfferPresentationInfo: {},
+    //   },
+    //   analytics: {},
+    //   cta: {
+    //     link: "https://www.swiggy.com/restaurants/ubq-by-barbeque-nation-sector-47-gurgaon-89555",
+    //     type: "WEBLINK",
+    //   },
+    // },
+    // {
     info: {
       id: "21742",
       name: "Wow! Momo",
@@ -1474,8 +1474,11 @@ const Body = () => {
     <div className="body">
       <div className="search"> Search</div>
       <div className="res-container">
-        {resList.map((item, index) => (
+        {/* {resList.map((item, index) => (
           <RestaurantCard resData={resList[index]} />
+        ))} */}
+        {resList.map((restaurant) => (
+          <RestaurantCard resData={restaurant} />
         ))}
       </div>
     </div>
@@ -1483,19 +1486,21 @@ const Body = () => {
 };
 
 const RestaurantCard = ({ resData }) => {
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
+    resData.info;
   return (
     <div className="res-card">
       <img
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.info.cloudinaryImageId
+          cloudinaryImageId
         }
         className="res-img"
       ></img>
-      <h3>{resData.info.name}</h3>
-      <h3>{resData.info.cuisines.join(", ")}</h3>
-      <h3>{resData.info.avgRating}</h3>
-      <h3>{resData.info.costForTwo}</h3>
+      <h3>{name}</h3>
+      <h3>{cuisines.join(", ")}</h3>
+      <h3>{avgRating}</h3>
+      <h3>{costForTwo}</h3>
     </div>
   );
 };
