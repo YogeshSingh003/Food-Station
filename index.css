@@ -43,3 +43,7 @@
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.res-btn {
+  margin: 10px;
+}
