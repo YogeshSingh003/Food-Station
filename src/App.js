@@ -1450,41 +1450,6 @@ const resList = [
   },
 ];
 
-function Header() {
-  return (
-    <div className="header">
-      <img
-        className="logo"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShsk1pH6g3vrtGcF_wbmYMMVxJsasF6OZUTu_lhxME7g&s"
-      ></img>
-      <ul className="list">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  );
-}
-
-const Body = () => {
-  const [count, setCount] = useState(0);
-
-  return (
-    <div className="body">
-      <div className="search"> Search</div>
-      <div className="res-container">
-        {/* {resList.map((item, index) => (
-          <RestaurantCard resData={resList[index]} />
-        ))} */}
-        {resList.map((restaurant) => (
-          <RestaurantCard resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId } =
     resData.info;
@@ -1504,5 +1469,6 @@ const RestaurantCard = ({ resData }) => {
     </div>
   );
 };
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);
