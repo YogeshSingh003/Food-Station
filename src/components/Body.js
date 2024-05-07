@@ -6,7 +6,6 @@ const Body = () => {
   const [restaurantList, setRestaurantList] = useState(resList);
   return (
     <div className="body">
-      {/* <div className="search"> Search</div> */}
       <div>
         <button
           className="res-btn"

@@ -9,7 +9,7 @@ const RestaurantCard = ({ resData }) => {
       <h3>{name}</h3>
       <h3>{cuisines.join(", ")}</h3>
       <h3>{avgRating}</h3>
-      <h3>{costForTwo}</h3>
+      <h3>{costForTwo.replace(" for two", "")}</h3>
     </div>
   );
 };
