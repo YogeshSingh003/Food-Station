@@ -1,9 +1,10 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../../utils/mockData";
+// import resList from "../../utils/mockData";
+import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
 
 const Body = () => {
-  const [restaurantList, setRestaurantList] = useState(resList);
+  const [restaurantList, setRestaurantList] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
@@ -13,8 +14,15 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4594965&lng=77.0266383&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+
+    setRestaurantList(
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
+
+  if (restaurantList.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
@@ -31,7 +39,7 @@ const Body = () => {
         >
           Top rated restaurant
         </button>
-        <button onClick={() => setRestaurantList(resList)}>Reset</button>
+        {/* <button onClick={() => setRestaurantList(resList)}>Reset</button> */}
       </div>
       <div className="res-container">
         {/** Different styles of mapping */}

@@ -47,3 +47,16 @@
 .res-btn {
   margin: 10px;
 }
+
+.shimmer-container {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shimmer-card {
+  height: 500px;
+  width: 200px;
+  background-color: #f0f0f0;
+}
