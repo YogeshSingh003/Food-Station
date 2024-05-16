@@ -2,30 +2,40 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
 const RestaurantMenu = () => {
-  const [resMenu, setResMenu] = useState(null);
+  const [resDetails, setResDetails] = useState(null);
   useEffect(() => {
     fetchMenu();
   }, []);
 
   const fetchMenu = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4594965&lng=77.0266383&restaurantId=807690&catalog_qa=undefined&submitAction=ENTER"
+      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.4594965&lng=77.0266383&restaurantId=692079&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
 
-    setResMenu(json.data);
+    setResDetails(json.data);
   };
 
-  if (resMenu === null) return <Shimmer />;
+  if (resDetails === null) return <Shimmer />;
 
-  const { name, cuisines } = resMenu.cards[2].card.card.info;
-  console.log(resMenu.cards[2].card.card.info);
+  const { name, cuisines, costForTwo, avgRating } =
+    resDetails.cards[2].card.card.info;
+  console.log(resDetails.cards);
 
   return (
     <>
-      <h3>{name}</h3>
-      <h3>{cuisines}</h3>
-      <h3>Pizza</h3>
+      <h2>{name}</h2>
+      <h5>{cuisines.join(", ")}</h5>
+      <h5>{avgRating}</h5>
+      <h5>{costForTwo / 100}</h5>
+      <h3>Menu</h3>
+      <div>
+        {resDetails.cards.map(
+          (item) =>
+            item?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card
+              ?.title
+        )}
+      </div>
     </>
   );
 };
@@ -33,11 +43,11 @@ const RestaurantMenu = () => {
 export default RestaurantMenu;
 
 // console.log(
-//   json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
-//     ?.card?.itemCards[0]
+//   json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]
+//
 // );
 // console.log(json?.data?.cards[2].card.card.info.name);
 
-//   console.log(resMenu.cards[2].card.card.info.name);
+//   console.log(resDetails.cards[2].card.card.info.name);
 
 //   console.log(name);
