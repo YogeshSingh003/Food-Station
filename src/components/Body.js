@@ -61,7 +61,6 @@ const Body = () => {
         >
           Top rated restaurant
         </button>
-        {console.log(filteredRestaurant)}
         {/* <button onClick={() => setRestaurantList(resList)}>Reset</button> */}
       </div>
       <div className="res-container">
