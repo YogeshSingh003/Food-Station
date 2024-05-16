@@ -1,7 +1,7 @@
 import { CDN_URL } from "../../utils/constant";
 
 const RestaurantCard = ({ resData }) => {
-  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla } =
+  const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla, id } =
     resData.info;
   return (
     <div className="res-card">
@@ -9,6 +9,7 @@ const RestaurantCard = ({ resData }) => {
       <h3>{name}</h3>
       <h3>{cuisines.slice(0, 4).join(", ")}</h3>
       <h3>{avgRating}</h3>
+      {/* <h3>{id}</h3> */}
       <h3>{costForTwo.replace(" for two", "")}</h3>
       <h3>{sla.deliveryTime + " minutes"}</h3>
     </div>
