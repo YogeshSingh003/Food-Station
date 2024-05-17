@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link, useParams } from "react-router-dom";
+import { useFetch } from "../../utils/useFetch";
 
 const RestaurantMenu = () => {
-  const [resDetails, setResDetails] = useState(null);
+  // const [resDetails, setResDetails] = useState(null);
   const resId = useParams();
+
+  const resDetails = useFetch(resId.resId);
+
+  /* This code has been shifted to useFetch 
+
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -18,6 +24,8 @@ const RestaurantMenu = () => {
 
     setResDetails(json.data);
   };
+
+  */
 
   if (resDetails === null) return <Shimmer />;
 
