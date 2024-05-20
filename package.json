@@ -19,7 +19,9 @@
   "homepage": "https://github.com/YogeshSingh003/Namaste-React#readme",
   "devDependencies": {
     "parcel": "^2.12.0",
-    "process": "^0.11.10"
+    "postcss": "^8.4.38",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.3"
   },
   "dependencies": {
     "localforage": "^1.10.0",
