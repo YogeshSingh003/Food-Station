@@ -35,8 +35,9 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div>
+      <div className="my-2 py-2">
         <input
+          className="py-1 mx-1  rounded border-solid border-2 border-slate-800 "
           type="text"
           value={searchValue}
           onChange={(e) => {
@@ -44,6 +45,7 @@ const Body = () => {
           }}
         ></input>
         <button
+          className="py-1 px-2 rounded border-solid border-2 border-black  transition ease-in-out  duration-500 hover:bg-blue-100 font-bold "
           onClick={() => {
             const filteredRestaurant = restaurantList.filter((res) =>
               res.info.name
@@ -56,7 +58,7 @@ const Body = () => {
           Search
         </button>
         <button
-          className="res-btn"
+          className="mx-4 py-1 px-2 rounded border-solid border-2 border-black transition ease-in-out  duration-500 hover:bg-blue-100 font-bold "
           onClick={() => {
             const filteredRestaurant = restaurantList.filter(
               (res) => res.info.avgRating > 4
@@ -69,7 +71,7 @@ const Body = () => {
         </button>
         {/* <button onClick={() => setRestaurantList(resList)}>Reset</button> */}
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap gap-5">
         {/** Different styles of mapping */}
         {/* {restaurantList.map((item, index) => (
             <RestaurantCard resData={resList[index]} />

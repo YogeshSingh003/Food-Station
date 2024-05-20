@@ -4,8 +4,11 @@ const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla, id } =
     resData.info;
   return (
-    <div className="res-card">
-      <img src={CDN_URL + cloudinaryImageId} className="res-img"></img>
+    <div className="flex flex-col place-content-center   rounded-lg w-56 h-100 border-solid border-2  border-black">
+      <img
+        src={CDN_URL + cloudinaryImageId}
+        className="w-52  rounded-md pt-2"
+      ></img>
       <h3>{name}</h3>
       <h3>{cuisines.slice(0, 4).join(", ")}</h3>
       <h3>{avgRating}</h3>
