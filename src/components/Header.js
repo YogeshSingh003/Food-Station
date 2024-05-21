@@ -7,7 +7,7 @@ function Header() {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   return (
-    <div className="flex justify-between">
+    <div className="flex shadow-lg justify-between">
       <img className="w-32" src={LOGO_URL}></img>
       <ul className="flex gap-5 px-3 py-12 font-semibold text-lg">
         <li>onlineStatus : {onlineStatus ? "✅" : "❌"}</li>
