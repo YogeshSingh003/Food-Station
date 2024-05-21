@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { topRated } from "./RestaurantCard";
 // import resList from "../../utils/mockData";
 import Shimmer from "./Shimmer";
 import { useEffect, useState } from "react";
@@ -9,6 +9,8 @@ const Body = () => {
   const [searchValue, setSearchValue] = useState("");
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+
+  const TopRestaurant = topRated(RestaurantCard);
   useEffect(() => {
     fetchData();
   }, []);
@@ -17,10 +19,11 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4594965&lng=77.0266383&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    // console.log(json);
+
     setRestaurantList(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    console.log(restaurantList);
     setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -35,7 +38,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="my-2 py-2">
+      <div className="my-2 flex justify-center mx-auto py-4">
         <input
           className="py-1 mx-1  rounded border-solid border-2 border-slate-800 "
           type="text"
@@ -71,7 +74,7 @@ const Body = () => {
         </button>
         {/* <button onClick={() => setRestaurantList(resList)}>Reset</button> */}
       </div>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex justify-evenly flex-wrap gap-5">
         {/** Different styles of mapping */}
         {/* {restaurantList.map((item, index) => (
             <RestaurantCard resData={resList[index]} />
@@ -81,7 +84,11 @@ const Body = () => {
             key={restaurant.info.id}
             to={"/restaurants/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.avgRating >= 4.5 ? (
+              <TopRestaurant resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
