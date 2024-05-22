@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 const RestaurantCategory = ({ cat }) => {
   //   const { title } = cat?.card?.card;
 
-  const [showItems, setShowItems] = useState(true);
+  const [showItems, setShowItems] = useState(false);
   handleClick = () => {
     setShowItems(!showItems);
   };
@@ -19,7 +19,7 @@ const RestaurantCategory = ({ cat }) => {
           </span>
           <span className="text-2xl">⬇️</span>
         </div>
-        <div>{showItems || <ItemList items={cat.itemCards} />}</div>
+        <div>{showItems && <ItemList items={cat.itemCards} />}</div>
       </div>
     </>
   );
