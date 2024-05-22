@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../../utils/useFetch";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   // const [resDetails, setResDetails] = useState(null);
@@ -30,25 +31,33 @@ const RestaurantMenu = () => {
   if (resDetails === null) return <Shimmer />;
 
   const { name, cuisines, costForTwo, avgRating } =
-    resDetails.cards[2].card.card.info;
+    resDetails?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    resDetails.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
+    resDetails?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
       ?.card;
-  // console.log(itemCards);
+  // console.log(resDetails?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards);
+  const categories =
+    resDetails?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c?.card?.card?.["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
 
   return (
     <>
-      <h2>{name}</h2>
-      <h5>{cuisines.join(", ")}</h5>
-      <h5>{avgRating}</h5>
-      <h5>{costForTwo / 100}</h5>
-      <h3>Menu</h3>
+      <div className="text-center mb-5">
+        <h2 className="font-bold text-xl pt-4">{name}</h2>
+        <h5 className="font-bold pb-2">{cuisines.join(", ")}</h5>
+        <span className="bg-green-600 rounded-lg px-4 py-1">
+          {avgRating}
+          {"⭐".repeat(avgRating)}
+        </span>
+      </div>
       <div>
-        {itemCards.map((item) => (
-          <div key={item.card.info.id}>
-            {item.card.info.name} - Rs.
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
+        {categories.map((c) => (
+          <div key={c?.card?.card?.title}>
+            <RestaurantCategory cat={c?.card?.card} />
           </div>
         ))}
       </div>
