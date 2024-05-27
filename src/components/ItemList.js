@@ -1,6 +1,17 @@
 import { key } from "localforage";
 import { CDN_URL } from "../../utils/constant";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../../utils/cartSlice";
 const ItemList = (items) => {
+  const dispatch = useDispatch();
+  const handleAddItem = (c) => {
+    dispatch(addItem(c?.card?.info?.name));
+  };
+
+  const handleRemoveItem = () => {
+    dispatch(removeItem());
+  };
+
   return (
     <>
       {items.items.map((c) => (
@@ -8,7 +19,7 @@ const ItemList = (items) => {
           key={c?.card?.info?.id}
           className="flex border-b-2 justify-between"
         >
-          <div className="py-16  font-bold text-sm w-9/12 ">
+          <div className="py-4  font-bold text-sm w-9/12 ">
             {c?.card?.info?.name} - ₹{" "}
             {c?.card?.info?.price / 100 || c?.card?.info?.defaultPrice / 100}
             <div className="font-light py-2">{c?.card?.info?.description}</div>
@@ -18,6 +29,20 @@ const ItemList = (items) => {
               className="w-full  rounded-sm    "
               src={CDN_URL + c?.card?.info?.imageId}
             ></img>
+            <div className="text-center  flex justify-center ">
+              <button
+                className="bg-black text-white text-sm py-1 pl-2 pr-2 "
+                onClick={() => handleRemoveItem(c)}
+              >
+                remove -
+              </button>
+              <button
+                className="bg-black text-white text-sm py-1 pl-2 pr-2 "
+                onClick={handleAddItem}
+              >
+                Add +
+              </button>
+            </div>
           </div>
         </div>
       ))}
