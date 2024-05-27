@@ -12,7 +12,7 @@ function Header() {
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
   return (
-    <div className="flex shadow-lg justify-between">
+    <div className="flex shadow-lg bg-white justify-between sticky top-0">
       <img className="w-32" src={LOGO_URL}></img>
 
       <ul className="flex gap-5 px-3 py-12 font-semibold text-lg">
