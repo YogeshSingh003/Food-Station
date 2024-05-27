@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import { removeItem } from "localforage";
 
 const cartSlice = createSlice({
   name: "cart",

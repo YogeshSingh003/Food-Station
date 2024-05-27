@@ -3,6 +3,7 @@ import { CDN_URL } from "../../utils/constant";
 const RestaurantCard = ({ resData }) => {
   const { name, cuisines, avgRating, costForTwo, cloudinaryImageId, sla, id } =
     resData.info;
+
   return (
     <div className="flex flex-col place-content-center  object-contain rounded-lg w-52 h-100 border-solid border-2  border-black">
       <img src={CDN_URL + cloudinaryImageId} className="w-52  "></img>

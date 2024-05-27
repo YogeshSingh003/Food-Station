@@ -2,10 +2,11 @@ import { key } from "localforage";
 import { CDN_URL } from "../../utils/constant";
 import { useDispatch } from "react-redux";
 import { addItem, removeItem } from "../../utils/cartSlice";
+
 const ItemList = (items) => {
   const dispatch = useDispatch();
   const handleAddItem = (c) => {
-    dispatch(addItem(c?.card?.info?.name));
+    dispatch(addItem(c));
   };
 
   const handleRemoveItem = () => {
@@ -32,13 +33,13 @@ const ItemList = (items) => {
             <div className="text-center  flex justify-center ">
               <button
                 className="bg-black text-white text-sm py-1 pl-2 pr-2 "
-                onClick={() => handleRemoveItem(c)}
+                onClick={handleRemoveItem}
               >
                 remove -
               </button>
               <button
                 className="bg-black text-white text-sm py-1 pl-2 pr-2 "
-                onClick={handleAddItem}
+                onClick={() => handleAddItem(c)}
               >
                 Add +
               </button>

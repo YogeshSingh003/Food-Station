@@ -26,7 +26,9 @@ function Header() {
         <li className="hover:text-blue-900 hover:underline">
           <Link to={"/contact"}>Contact Us</Link>
         </li>
-        <li>Cart({cartItems.length} items)</li>
+        <li className="hover:text-blue-900 hover:underline">
+          <Link to={"/cart"}>Cart({cartItems.length} items)</Link>
+        </li>
         <li>
           <button
             className="rounded border-solid border-2 px-2  border-black "
