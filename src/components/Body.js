@@ -22,7 +22,11 @@ const Body = () => {
   //   const json = await data.json();
   const fetchData = async () => {
     const data = await fetch(
+<<<<<<< HEAD
       "https://foodfire.onrender.com/api/restaurants?lat=28.4594965&lng=77.0266383&page_type=DESKTOP_WEB_LISTING"
+=======
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4594965&lng=77.0266383&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+>>>>>>> fb6b1652f8f7cc5ca6c1715ee800320907164490
     );
     const json = await data.json();
 
