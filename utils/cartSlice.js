@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { removeItem } from "localforage";
+// import { removeItem } from "localforage";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -19,6 +19,6 @@ const cartSlice = createSlice({
   },
 });
 
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { removeItem, addItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
