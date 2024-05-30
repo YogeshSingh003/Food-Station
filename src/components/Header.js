@@ -3,6 +3,7 @@ import { LOGO_URL } from "../../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import { useSelector } from "react-redux";
+import logo from "./logo.png";
 
 function Header() {
   const [btnName, setBtnName] = useState("Login");
@@ -13,7 +14,8 @@ function Header() {
   console.log(cartItems);
   return (
     <div className="flex shadow-lg bg-white justify-between sticky top-0">
-      <img className="w-32" src={LOGO_URL}></img>
+      {/* <img className="w-32" src={LOGO_URL}></img> */}
+      <img className="w-32 py-6 mx-5" src={logo}></img>
 
       <ul className="flex gap-5 px-3 py-12 font-semibold text-lg">
         <li>onlineStatus : {onlineStatus ? "✅" : "❌"}</li>
