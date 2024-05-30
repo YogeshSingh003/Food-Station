@@ -13,7 +13,7 @@ function Header() {
   const cartItems = useSelector((store) => store.cart.items);
   console.log(cartItems);
   return (
-    <div className="flex shadow-lg bg-white justify-between sticky top-0">
+    <div className="flex shadow-lg bg-white justify-between z-10 sticky top-0">
       {/* <img className="w-32" src={LOGO_URL}></img> */}
       <img className="w-32 py-6 mx-5" src={logo}></img>
 

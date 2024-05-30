@@ -27,7 +27,7 @@ const ItemList = (items) => {
           </div>
           <div className="w-3/12 font-thin py-4 relative ">
             <img
-              className="w-full  rounded-sm    "
+              className="w-full  rounded-sm   -z-10 "
               src={CDN_URL + c?.card?.info?.imageId}
             ></img>
             <div className="text-center  flex justify-center ">
