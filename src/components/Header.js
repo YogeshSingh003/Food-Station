@@ -11,7 +11,11 @@ function Header() {
 
   // SUbscribing to the store using a selector
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
+  // console.log(cartItems);
+  cartItems.map((item) => {
+    console.log(item.card.info.id);
+    console.log(item.card.info.name);
+  });
   return (
     <div className="flex shadow-lg bg-white justify-between z-10 sticky top-0">
       {/* <img className="w-32" src={LOGO_URL}></img> */}

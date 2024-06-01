@@ -9,6 +9,7 @@ const Body = () => {
   const [searchValue, setSearchValue] = useState("");
   const [restaurantList, setRestaurantList] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const [markTopRated, setMarkTopRated] = useState(true);
 
   const TopRestaurant = topRated(RestaurantCard);
   useEffect(() => {
@@ -46,15 +47,16 @@ const Body = () => {
     <div className="body">
       <div className="my-2 flex justify-center mx-auto py-4">
         <input
-          className="py-1 mx-1  rounded border-solid border-2 border-slate-800 "
+          className="px-5 py-2.5  mb-2  rounded border-solid border-2 border-slate-800 "
           type="text"
           value={searchValue}
+          placeholder="Search..."
           onChange={(e) => {
             setSearchValue(e.target.value);
           }}
         ></input>
         <button
-          className="py-1 px-2 rounded border-solid border-2 border-black  transition ease-in-out  duration-500 hover:bg-blue-100 font-bold "
+          className="px-5 py-2.5 me-2 mb-2 rounded border-solid border-2 border-black  transition ease-in-out  duration-500 hover:bg-blue-100 font-bold "
           onClick={() => {
             const filteredRestaurant = restaurantList.filter((res) =>
               res.info.name
@@ -67,14 +69,21 @@ const Body = () => {
           Search
         </button>
         <button
-          className="mx-4 py-1 px-2 rounded border-solid border-2 border-black transition ease-in-out  duration-500 hover:bg-blue-100 font-bold "
           onClick={() => {
+            setMarkTopRated(!markTopRated);
             const filteredRestaurant = restaurantList.filter(
               (res) => res.info.avgRating > 4
             );
 
-            setFilteredRestaurant(filteredRestaurant);
+            markTopRated && setFilteredRestaurant(filteredRestaurant);
+            !markTopRated && setFilteredRestaurant(restaurantList);
+            console.log(markTopRated);
           }}
+          className={` bg-white hover:bg-gray-300 font-bold rounded px-5 py-2.5 me-2 mb-2 border-solid border-2 border-black  ${
+            markTopRated
+              ? "bg-white"
+              : "bg-green-200 focus:ring-4 focus:ring-gray-400 "
+          } `}
         >
           Top rated restaurant
         </button>
