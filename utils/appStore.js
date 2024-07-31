@@ -4,7 +4,7 @@ import cartSlice from "./cartSlice";
 
 const appStore = configureStore({
   reducer: {
-    // cart: cartSlice.reducer,
+    // cart: cartSlice,
     cart: cartReducer,
   },
 });
