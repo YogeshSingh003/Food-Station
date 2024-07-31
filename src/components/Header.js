@@ -17,7 +17,7 @@ function Header() {
     console.log(item.card.info.name);
   });
   return (
-    <div className="flex shadow-lg bg-white justify-between z-10 sticky top-0">
+    <div className="flex shadow-lg bg-orange-300 justify-between z-10 sticky top-0">
       {/* <img className="w-32" src={LOGO_URL}></img> */}
       <img className="w-32 py-6 mx-5" src={logo}></img>
 
